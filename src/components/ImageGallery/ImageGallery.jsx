@@ -31,22 +31,12 @@ export class ImageGallery extends Component {
     return null;
   }
 
-  getSnapshotBeforeUpdate() {
-    return document.body.clientHeight + 72;
-  }
-
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (
       (prevProps.query !== this.props.query && this.props.query) ||
       prevState.page !== this.state.page
     ) {
       this.getSearchedImages();
-    }
-    if (prevState.images !== this.state.images && this.state.page !== 1) {
-      window.scrollTo({
-        top: snapshot,
-        behavior: 'smooth',
-      });
     }
   }
 

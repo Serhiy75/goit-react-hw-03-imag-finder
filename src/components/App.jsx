@@ -10,6 +10,7 @@ export class App extends Component {
 
   setQuery = query => {
     this.setState({ query });
+    // console.log(query);
   };
 
   render() {
